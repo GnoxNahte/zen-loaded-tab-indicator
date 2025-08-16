@@ -1,0 +1,27 @@
+#tabbrowser-tabs .tabbrowser-tab[pinned]:not([pending="true"]):not([zen-essential]) {
+  & .tab-content {
+    border-radius: var(--tab-border-radius);
+    background: linear-gradient(to right, var(--border-color-interactive) 5px, transparent 5px);
+    position: relative;
+
+    @media (-moz-bool-pref: "theme.zen-loaded-tab-indicator.use-gradient-background") {
+        background: linear-gradient(to right, light-dark(rgba(0, 0, 0, 0.15), rgba(255, 255, 255, 0.15)) 5px, transparent 100%);
+    }
+  }
+  
+  /* Check if the next tab is also loaded */
+  &:has(+ .tabbrowser-tab[pinned]:not([pending="true"]):not([zen-essential])) {
+    & .tab-content {
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+    }
+  }
+  
+  /* Check if the previous tab is also loaded */
+  & + .tabbrowser-tab[pinned]:not([pending="true"]):not([zen-essential]) {
+    & .tab-content {
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+    }
+  }
+}

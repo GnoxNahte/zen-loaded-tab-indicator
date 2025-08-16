@@ -1,0 +1,8 @@
+{
+    {
+        "property": "theme.zen-loaded-tab-indicator.use-gradient-background",
+        "label": "Use gradient background as the indicator.",
+        "defaultValue": "false",
+        "type": "checkbox"
+    }
+}
