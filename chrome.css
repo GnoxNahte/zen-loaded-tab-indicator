@@ -25,3 +25,11 @@
     }
   }
 }
+
+@media (-moz-bool-pref: "theme.zen-loaded-tab-indicator.fade-unloaded-tab") {
+  #tabbrowser-tabs .tabbrowser-tab[pinned][pending="true"]:not([zen-essential]) {
+    & .tab-content {
+        opacity: 0.7;
+    }
+  }
+}
